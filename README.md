@@ -1,3 +1,3 @@
-# XEN Crypto
+# Trance Token
 
-Alternative website
+FrontEnd
