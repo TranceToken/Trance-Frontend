@@ -14,9 +14,9 @@ export const xenContract = (contractChain?: Chain) => {
     case pulseChain.id:
     case chain.goerli.id:
       return {
-        addressOrName: "0x2b8f075c8b4c88276e8846052A9eC18c2f253F0b",
+        addressOrName: "0x76f01394144a45741efccda993837368d8031456",
         contractInterface: XENCryptoABI,
-        chainId: 5,
+        chainId: contractChain.id,
       };
     case chain.polygonMumbai.id:
     case bscTestnet.id:
@@ -54,9 +54,9 @@ export const xenContract = (contractChain?: Chain) => {
       };
     default:
       return {
-        addressOrName: "0x2b8f075c8b4c88276e8846052A9eC18c2f253F0b",
+        addressOrName: "0x76f01394144a45741efccda993837368d8031456",
         contractInterface: XENCryptoABI,
-        chainId: chain.mainnet.id,
+        chainId: 4,
       };
   }
 };

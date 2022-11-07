@@ -11,6 +11,7 @@ import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { bscTestnet } from "~/lib/chains/bscTestnet";
 import { bscMainnet } from "~/lib/chains/bscMainnet";
+import { goerliTestnet } from "~/lib/chains/goerliTestnet";
 import { pulseChain } from "~/lib/chains/pulseChainTestnet";
 import { polygonMainnet } from "~/lib/chains/polygonMainnet";
 import { avaxMainnet } from "~/lib/chains/avaxMainnet";
@@ -30,8 +31,10 @@ const ANKR_CHAIN_ID_SET = [
 ];
 
 export const chainList = [
-   chain.mainnet,
-/*  bscMainnet,
+  goerliTestnet,
+ /*  chain.mainnet,
+  bscMainnet,
+
   polygonMainnet,
   avaxMainnet,
   ethwMainnet,
