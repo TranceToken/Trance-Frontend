@@ -104,7 +104,6 @@ const Chains: NextPage = () => {
     return (
       <tr>
         <th className="hidden lg:table-cell">Chain</th>
-        <th className="hidden lg:table-cell text-right">gRank</th>
         <th className="hidden lg:table-cell text-right">Address</th>
       </tr>
     );
