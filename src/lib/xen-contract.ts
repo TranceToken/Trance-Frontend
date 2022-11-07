@@ -13,6 +13,11 @@ export const xenContract = (contractChain?: Chain) => {
   switch (contractChain?.id) {
     case pulseChain.id:
     case chain.goerli.id:
+      return {
+        addressOrName: "0x2b8f075c8b4c88276e8846052A9eC18c2f253F0b",
+        contractInterface: XENCryptoABI,
+        chainId: 5,
+      };
     case chain.polygonMumbai.id:
     case bscTestnet.id:
       return {
@@ -42,9 +47,14 @@ export const xenContract = (contractChain?: Chain) => {
         chainId: contractChain.id,
       };
     case chain.mainnet.id:
+      return {
+        addressOrName: "0x2b8f075c8b4c88276e8846052A9eC18c2f253F0b",
+        contractInterface: XENCryptoABI,
+        chainId: 1,
+      };
     default:
       return {
-        addressOrName: "0x06450dEe7FD2Fb8E39061434BAbCFC05599a6Fb8",
+        addressOrName: "0x2b8f075c8b4c88276e8846052A9eC18c2f253F0b",
         contractInterface: XENCryptoABI,
         chainId: chain.mainnet.id,
       };

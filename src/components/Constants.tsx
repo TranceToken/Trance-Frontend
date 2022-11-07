@@ -76,34 +76,34 @@ export const linkItems = [
   {
     name: "Whitepaper",
     icon: <DocumentTextIcon className="h-5 w-5" />,
-    href: "https://faircrypto.org/xencryptolp.pdf",
+    href: "https://docs.google.com/document/d/1QImFUCpWrxem413JfHxilgiSekml2JsVVFyD77e29x0/edit?usp=sharing",
   },
-  {
+/*   {
     name: "Docs",
     icon: <BookOpenIcon className="h-5 w-5" />,
     href: "https://xensource.gitbook.io/www.xenpedia.io/",
-  },
+  }, */
   {
     name: "Twitter",
     icon: <TwitterIcon />,
-    href: "https://twitter.com/XEN_Crypto",
+    href: "https://twitter.com/TranceTokenPLS",
   },
   {
     name: "Telegram",
     icon: <TelegramIcon />,
-    href: "https://t.me/XENCryptoTalk",
+    href: "https://t.me/+9tv24KmC4tA0YmU5",
   },
   {
     name: "Discord",
     icon: <DiscordIcon />,
-    href: "https://discord.gg/rcAhrKWJb6",
+    href: "https://discord.gg/6wFv3hrE8p",
   },
   {
     name: "GitHub",
     icon: <GitHubIcon />,
-    href: "https://github.com/FairCrypto",
+    href: "https://github.com/TranceToken",
   },
-  {
+/*   {
     name: "CoinMarketCap",
     icon: <CoinmarketCapIcon />,
     href: "https://coinmarketcap.com/currencies/xen-crypto/",
@@ -112,5 +112,5 @@ export const linkItems = [
     name: "Dune Analytics",
     icon: <DuneIcon />,
     href: "https://dune.com/sixdegree/xen-crypto-overview",
-  },
+  }, */
 ];

@@ -30,17 +30,17 @@ const ANKR_CHAIN_ID_SET = [
 ];
 
 export const chainList = [
-  chain.mainnet,
-  bscMainnet,
+   chain.mainnet,
+/*  bscMainnet,
   polygonMainnet,
   avaxMainnet,
   ethwMainnet,
   moonbeamMainnet,
   evmosMainnet,
-  bscTestnet,
+  bscTestnet, 
   chain.goerli,
-  pulseChain,
-  chain.polygonMumbai,
+   pulseChain,
+  chain.polygonMumbai, */
 ];
 
 const { chains, provider, webSocketProvider } = configureChains(chainList, [

@@ -57,11 +57,6 @@ const Chains: NextPage = () => {
       chainId: chain?.id,
     });
 
-    const { data: globalRank } = useContractRead({
-      ...xenContract(chain),
-      functionName: "globalRank",
-      // watch: true,
-    });
 
     return (
       <tr>
@@ -89,12 +84,6 @@ const Chains: NextPage = () => {
           </Link>
           <div className="pt-4 lg:hidden flex flex-col space-y-4">
             <pre className="text-right">
-              <CountUp
-                end={Number(globalRank)}
-                preserveValue={true}
-                separator=","
-                suffix=" gRank"
-              />
             </pre>
             {tokenData && <AddressLinks chain={chain} />}
           </div>
@@ -102,11 +91,6 @@ const Chains: NextPage = () => {
 
         <td className="hidden lg:table-cell text-right">
           <pre>
-            <CountUp
-              end={Number(globalRank)}
-              preserveValue={true}
-              separator=","
-            />
           </pre>
         </td>
         <td className="hidden lg:table-cell">
