@@ -18,5 +18,5 @@ export const pulseChain: Chain = {
       url: "https://scan.v2b.testnet.pulsechain.com",
     },
   },
-  testnet: true,
+  testnet: false,
 };
