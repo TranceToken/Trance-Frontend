@@ -12,6 +12,11 @@ import { evmosMainnet } from "./chains/evmosMainnet";
 export const xenContract = (contractChain?: Chain) => {
   switch (contractChain?.id) {
     case pulseChain.id:
+      return {
+        addressOrName: "0xc7BdAFB599Df3fd938d9AF212F7B6C53A79485C3",
+        contractInterface: XENCryptoABI,
+        chainId: contractChain.id,
+      };
     case chain.goerli.id:
       return {
         addressOrName: "0x6d674D70A62BdE980daB08A2093218Ba7f7773aa",

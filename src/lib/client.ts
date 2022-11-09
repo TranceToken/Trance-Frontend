@@ -32,6 +32,7 @@ const ANKR_CHAIN_ID_SET = [
 
 export const chainList = [
   goerliTestnet,
+  pulseChain,
  /*  chain.mainnet,
   bscMainnet,
 
@@ -42,7 +43,7 @@ export const chainList = [
   evmosMainnet,
   bscTestnet, 
   chain.goerli,
-   pulseChain,
+
   chain.polygonMumbai, */
 ];
 
