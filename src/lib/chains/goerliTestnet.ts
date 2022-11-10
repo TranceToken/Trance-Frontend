@@ -15,5 +15,5 @@ export const goerliTestnet: Chain = {
   blockExplorers: {
     default: { name: "goerli Testnet", url: "https://goerli.etherscan.io/" },
   },
-  testnet: false,
+  testnet: true,
 };

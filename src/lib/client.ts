@@ -31,7 +31,7 @@ const ANKR_CHAIN_ID_SET = [
 ];
 
 export const chainList = [
-  goerliTestnet,
+/*   goerliTestnet, */
   pulseChain,
  /*  chain.mainnet,
   bscMainnet,
