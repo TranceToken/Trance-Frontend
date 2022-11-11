@@ -26,7 +26,9 @@ import * as yup from "yup";
 import GasEstimate from "~/components/GasEstimate";
 import CardContainer from "~/components/containers/CardContainer";
 import XENContext from "~/contexts/XENContext";
+import { CountDataCard } from "~/components/StatCards";
 import { merkle } from "~/lib/merkle";
+const Web3 = require('web3');
 const Mint = () => {
   const { address } = useAccount();
   const { chain } = useNetwork();
@@ -34,20 +36,34 @@ const Mint = () => {
   const { userMint, feeData } = useContext(XENContext);
   const [disabled, setDisabled] = useState(true);
   const [processing, setProcessing] = useState(false);
-
+  const [reward, setReward] = useState(0);
 
   /*** CONTRACT READ SETUP  ***/
   interface MyObj {
-    index: string;
+    index: number;
     amount: string;
     proof: string[];
 }
+  /*** FORM SETUP ***/
+
+const estimatedClaimAmount = () => {
+  let result = JSON.stringify(merkle.claims != undefined ? merkle.claims[address as keyof typeof address] : 'titsErrors');
+  if (result) {
+      const parsed = JSON.parse(result) as MyObj;
+    return parsed.amount.toString();
+  } else {
+    const XEN = 0
+    return XEN.toString();
+  }
+}
+console.log(estimatedClaimAmount().toString())
 //only works with valid account in Claims. (DUHH)
   const { data } = useContractRead({
     ...xenContract(chain),
     functionName: "getUserMint",
     overrides: { from: address },
     watch: true,
+
   });
 
   /*** FORM SETUP ***/
@@ -69,7 +85,7 @@ const Mint = () => {
   const { handleSubmit: cHandleSubmit } = useForm();
   /*** CONTRACT WRITE SETUP ***/
   var parsed: MyObj = {
-    index: "0",
+    index: 0,
     amount: "0",
     proof: []
   }
@@ -94,12 +110,14 @@ if(merkle.claims[address as keyof typeof address] != undefined)
     setDisabled(false);
     toast("Drop Ready");
     console.log("Drop Ready")
+      setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))) ;
   },
   onError(data) {
     setProcessing(true);
     setDisabled(true);
     toast.error("Drop Not Available. (either Already Claimed, or Not Invited)");
     console.log("Drop Not Available")
+    setReward(Number(Web3.utils.fromWei('0', 'ether'))) ;
   },
  });
   const { write } = useContractWrite({
@@ -155,6 +173,12 @@ if(merkle.claims[address as keyof typeof address] != undefined)
         </ul>
 
         <CardContainer>
+
+        <CountDataCard
+                    title="Reward"
+                    value={reward}
+                    description="XEN"
+                  />
           <form onSubmit={cHandleSubmit(onSubmit)}>
 
             <div className="flex flex-col space-y-4">
