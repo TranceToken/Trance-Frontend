@@ -125,12 +125,12 @@ const Portfolio: NextPage = () => {
               <CountDataCard
                 title="Mint Total"
                 value={mintTotal}
-                description="XEN"
+                description="TRANCE"
               />
               <CountDataCard
                 title="Stake Total"
                 value={stakeTotal}
-                description="XEN"
+                description="TRANCE"
               />
             </div>
 

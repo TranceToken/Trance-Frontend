@@ -9,8 +9,8 @@ const Meta: NextPage = () => {
 
   const title = `Trance Token - ${path.join(" - ")}`;
   const description =
-    "XEN.fyi is an open-source project to help users understand the XEN crypto protocol and its ecosystem.";
-  const url = "https://xen.fyi";
+    "Trance Token is an open-source project to help users understand the Trance crypto protocol and its ecosystem.";
+  const url = "Trance-frontend.vercel.app";
   const image = "https://xen.fyi/images/preview.png";
 
   return (
@@ -28,7 +28,7 @@ const Meta: NextPage = () => {
       <meta name="author" content="Joe Blau joe@atomize.xyz" />
       <meta
         name="keywords"
-        content="xen.fyi, xen crypto, xencrypto, xen, crypto, xen.network, token, ethereum, avalanche, polygon, binance"
+        content="trance crypto, trancecrypto, trance, crypto, trance.vercel, token, ethereum, pulsechain, hex, richardheart, richard, heart"
       />
 
       {/* Apple */}

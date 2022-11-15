@@ -69,7 +69,7 @@ const Dashboard: NextPage = () => {
       decimals: 0,
       suffix: "%",
       tooltip:
-        "Annual Percentage Yield (APY) determines XEN Staking Reward calculation. It is non-compounding and is pro-rated by days. APY starts at 20% on Genesis and decreases by 1p.p. every 90 days until it reaches 2%",
+        "Annual Percentage Yield (APY) determines TRANCE Staking Reward calculation. It is non-compounding and is pro-rated by days. APY starts at 20% on Genesis and decreases by 1p.p. every 90 days until it reaches 2%",
     },
   ];
 
@@ -121,7 +121,7 @@ const Dashboard: NextPage = () => {
               {token && (
                 <DataCard
                   title={"Contract"}
-                  value={token?.symbol ?? "XEN"}
+                  value={token?.symbol ?? "TRANCE"}
                   description={xenContract(chainFromId).addressOrName}
                 />
               )}

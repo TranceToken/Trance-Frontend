@@ -168,17 +168,18 @@ if(merkle.claims[address as keyof typeof address] != undefined)
 
 
           <Link href="/mint/2">
-            <a className="step step-neutral">Mint</a>
+            <a className="step">Mint</a>
           </Link>
         </ul>
 
         <CardContainer>
-
+        <div className="flex stats glass w-full text-neutral">
         <CountDataCard
                     title="Reward"
                     value={reward}
-                    description="XEN"
+                    description="TRANCE"
                   />
+                       </div>
           <form onSubmit={cHandleSubmit(onSubmit)}>
 
             <div className="flex flex-col space-y-4">

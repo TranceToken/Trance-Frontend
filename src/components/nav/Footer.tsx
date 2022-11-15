@@ -5,11 +5,11 @@ import { xenContract } from "~/lib/xen-contract";
 import { useState } from "react";
 import { DONATION_ADDRESS } from "~/lib/helpers";
 import AddressLink from "~/components/AddressLink";
-
+import {pulseChain} from "~/lib/chains/pulseChainTestnet";
 const Footer = () => {
   const { chain: currentChain } = useNetwork();
 
-  const defaultChain: Chain = currentChain ?? chain.mainnet;
+  const defaultChain: Chain = pulseChain;
   const [address] = useState(xenContract(defaultChain).addressOrName);
 
   return (

@@ -49,7 +49,7 @@ export const WalletAddressField: NextPage<any> = (props) => {
       />
       <label className="label">
         <span className="label-text-alt text-neutral">
-          Wallet address where you want to share your XEN
+          Wallet address where you want to share your TRANCE
         </span>
       </label>
     </div>

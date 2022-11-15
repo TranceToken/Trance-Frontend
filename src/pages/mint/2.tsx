@@ -284,7 +284,7 @@ let i = 0;
                   <CountDataCard
                     title="Reward"
                     value={reward}
-                    description="XEN"
+                    description="TRANCE"
                   />
                 </div>
 
@@ -322,14 +322,14 @@ let i = 0;
                   <CountDataCard
                     title="Reward"
                     value={reward}
-                    description="XEN"
+                    description="TRANCE"
                   />
                   <CountDataCard
                     title="Penalty"
                     value={penaltyPercent}
                     suffix="%"
                     descriptionNumber={penaltyXEN}
-                    descriptionNumberSuffix=" XEN"
+                    descriptionNumberSuffix=" TRANCE"
                   />
                 </div>
 
@@ -394,14 +394,14 @@ let i = 0;
                   <CountDataCard
                     title="Reward"
                     value={reward}
-                    description="XEN"
+                    description="TRANCE"
                   />
                   <CountDataCard
                     title="Penalty"
                     value={penaltyPercent}
                     suffix="%"
                     descriptionNumber={penaltyXEN}
-                    descriptionNumberSuffix=" XEN"
+                    descriptionNumberSuffix=" TRANCE"
                   />
                 </div>
 

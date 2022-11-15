@@ -101,7 +101,7 @@ const Stake = () => {
                     amount: Number(userStake?.amount ?? 0),
                     apy: Number(userStake?.apy ?? 0),
                   })}
-                  description="XEN"
+                  description="TRANCE"
                 />
               </div>
 

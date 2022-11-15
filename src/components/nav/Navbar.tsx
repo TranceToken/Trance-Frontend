@@ -199,12 +199,12 @@ export const Navbar: NextPage = () => {
                       address: token.address,
                       decimals: token.decimals,
                       image: "https://xen.fyi/images/xen.png",
-                      symbol: token.symbol ?? "XEN",
+                      symbol: token.symbol ?? "TRANCE",
                     });
                     (document.activeElement as HTMLElement).blur();
                   }}
                 >
-                  Add XEN to Wallet
+                  Add TRANCE to Wallet
                   <WalletIcon />
                 </button>
               </li>

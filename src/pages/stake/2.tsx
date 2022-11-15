@@ -21,14 +21,14 @@ const Stake = () => {
 
   const mintItems = [
     {
-      title: "Liquid XEN",
+      title: "Liquid TRANCE",
       value: Number(
         ethers.utils.formatUnits(xenBalance?.value ?? BigNumber.from(0))
       ),
       suffix: "",
     },
     {
-      title: "Staked XEN",
+      title: "Staked TRANCE",
       value: Number(
         ethers.utils.formatUnits(userStake?.amount ?? BigNumber.from(0))
       ),

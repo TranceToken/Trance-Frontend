@@ -79,7 +79,7 @@ export const client = createClient({
     new CoinbaseWalletConnector({
       chains,
       options: {
-        appName: "xen.fyi",
+        appName: "Trance Crypto",
       },
     }),
     new WalletConnectConnector({
