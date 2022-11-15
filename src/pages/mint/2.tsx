@@ -81,7 +81,29 @@ const { data } = useContractRead({
       setDisabled(false);
       toast("Drop Ready");
       console.log("Drop Ready")
-      setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))) ;
+      setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')));
+
+      if (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) > 0)
+      {
+        if (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))  > 50000000)
+        {
+          setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 500)  
+          setPenaltyPercent(
+            Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) 
+          / (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 500)
+          );
+        }
+        if (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))  > 100000000)
+        {
+
+          setPenaltyPercent(
+            Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) 
+          / (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 1000)
+          );
+          setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 1000)
+          
+        }
+      }
     },
     onError(data) {
       setProcessing(true);
@@ -285,6 +307,13 @@ let i = 0;
                     title="Reward"
                     value={reward}
                     description="TRANCE"
+                  />
+                  <CountDataCard
+                    title="Penalty"
+                    value={penaltyPercent}
+                    suffix="%"
+                    descriptionNumber={penaltyXEN}
+                    descriptionNumberSuffix=" TRANCE"
                   />
                 </div>
 

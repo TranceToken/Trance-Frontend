@@ -125,13 +125,15 @@ if(merkle.claims[address as keyof typeof address] != undefined)
     onSuccess(data) {
       setProcessing(false);
       setDisabled(false);
-      router.push("/mint/2");
     },
     onError(data) {
       setProcessing(true);
       setDisabled(true);
-
     },
+/*     onSettled(data){
+      router.push("/mint/2");
+    } */
+    
   });
   const {} = useWaitForTransaction({
     onSuccess(data) {
