@@ -36,7 +36,7 @@ const Dashboard: NextPage = () => {
   const generalStats = [
 
     {
-      title: "Active Minters",
+      title: "Total Minters of TRANCE",
       value: activeMinters,
     },
     {
