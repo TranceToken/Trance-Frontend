@@ -49,12 +49,12 @@ const Mint = () => {
     amount: number;
     proof: string[];
 }
-
+let parsed: MyObj = {index: "", amount: 0, proof: []};
 //only works with valid account in Claims. (DUHH)
 const estimatedClaimAmount = () => {
   let result = JSON.stringify(merkle.claims != undefined ? merkle.claims[address as keyof typeof address] : 'titsErrors');
   if (result) {
-      const parsed = JSON.parse(result) as MyObj;
+      parsed = JSON.parse(result) as MyObj;
     return parsed.amount.toString();
   } else {
     const XEN = 0
@@ -71,7 +71,8 @@ const { data } = useContractRead({
 
   // Claim
   const { handleSubmit: cHandleSubmit } = useForm();
-
+  estimatedClaimAmount();
+  //console.log(Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')));
   const { config: configClaim } = usePrepareContractWrite({
     addressOrName: xenContract(chain).addressOrName,
     contractInterface: XENCryptoABI,
@@ -81,26 +82,26 @@ const { data } = useContractRead({
       setDisabled(false);
       toast("Drop Ready");
       console.log("Drop Ready")
-      setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')));
-
-      if (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) > 0)
+      setReward(Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')));
+ 
+      if (Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')) > 0)
       {
-        if (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))  > 50000000)
+        if (Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether'))  > 50000000)
         {
-          setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 500)  
+          setReward(Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')) / 500)  
           setPenaltyPercent(
-            Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) 
-          / (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 500)
+            Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')) 
+          / (Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')) / 500)
           );
         }
-        if (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))  > 100000000)
+        if (Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether'))  > 100000000)
         {
 
           setPenaltyPercent(
-            Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) 
-          / (Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 1000)
+            Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')) 
+          / (Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')) / 1000)
           );
-          setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether')) / 1000)
+          setReward(Number(Web3.utils.fromWei(parsed.amount.toString(), 'ether')) / 1000)
           
         }
       }
