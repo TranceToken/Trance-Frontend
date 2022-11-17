@@ -170,7 +170,7 @@ if(merkle.claims[address as keyof typeof address] != undefined)
 
 
           <Link href="/mint/2">
-            <a className="step">Mint</a>
+            <a className="step">Finish Mint</a>
           </Link>
         </ul>
 

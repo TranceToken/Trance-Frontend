@@ -293,7 +293,7 @@ let i = 0;
           </Link>
 
           <Link href="/mint/2">
-            <a className="step step-neutral">Mint</a>
+            <a className="step step-neutral">Finish Mint</a>
           </Link>
         </ul>
 
