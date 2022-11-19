@@ -56,7 +56,6 @@ const estimatedClaimAmount = () => {
     return XEN.toString();
   }
 }
-console.log(estimatedClaimAmount().toString())
 //only works with valid account in Claims. (DUHH)
   const { data } = useContractRead({
     ...xenContract(chain),
