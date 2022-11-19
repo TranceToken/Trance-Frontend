@@ -6,10 +6,12 @@ import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { client } from "~/lib/client";
 import Layout from "~/components/Layout";
-
+import { Analytics } from '@vercel/analytics/react';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    
     <ThemeProvider>
+      <Analytics />
       <WagmiConfig client={client}>
         <ConnectKitProvider
           options={{
