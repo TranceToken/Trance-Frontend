@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
         >
           <Layout>
-            <GoogleAnalytics trackPageViews />
+            <GoogleAnalytics trackPageViews gaMeasurementId="G-DBTH5Q7V8S" />
             <Component {...pageProps} />
           </Layout>
         </ConnectKitProvider>

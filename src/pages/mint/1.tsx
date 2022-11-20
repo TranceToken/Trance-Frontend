@@ -217,7 +217,7 @@ if(merkle.claims[address as keyof typeof address] != undefined)
                 </p>
                 <p className="mt-1 text-md text-gray-500">
                   Drop not Available.  Either... 
-                  <br></br>1. Already claimed (got to Finish Mint)
+                  <br></br> 1. Already claimed (go to Finish Mint)
                   <br></br> 2. Not invited.
                 </p>
             </div>

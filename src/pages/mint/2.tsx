@@ -180,7 +180,7 @@ const { data } = useContractRead({
                   </p>
                   <p className="mt-1 text-md text-gray-500">
                    Minting Not Available. Either..
-                   <br></br> 1. Havent Claimed (go back to Start Mint)<br></br> 2. Already Minted (Hooray!)
+                   <br></br> 1. Havent Claimed (go to "Start Mint")<br></br> 2. Already Minted (Hooray!)
                   </p>
               </div>
             </div>
