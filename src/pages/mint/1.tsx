@@ -105,16 +105,134 @@ if(merkle.claims[address as keyof typeof address] != undefined)
      parsed.proof
    ],
    onSuccess(data) {
-    setProcessing(false);
-    setDisabled(false);
-    toast("Drop Ready");
-    console.log("Drop Ready")
-      setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))) ;
+    if (chain?.name != "PLS Testnet")
+    {
+      toast.custom( (t) => (
+        <div
+          className={`${
+            t.visible ? 'animate-enter' : 'animate-leave'
+          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+        >
+          <div className="flex-1 w-0 p-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 pt-0.5">
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src="https://pbs.twimg.com/profile_images/1587987072685522945/Y_fE_Ojk_400x400.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="ml-3 flex-1">
+
+                  <p className="text-lg font-medium text-black-100">
+                   Error
+                  </p>
+                  <p className="mt-1 text-md text-gray-500">
+                    Connect to the PLS Testnet.
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex border-l border-gray-200">
+            <button
+              onClick={() => toast.dismiss(t.id)}
+              className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      ));
+      console.log("Error: Switch to PLS Testnet.")
+      setProcessing(true);
+      setDisabled(true);
+      setReward(Number(Web3.utils.fromWei(0, 'ether'))) ;
+    }
+    else {
+      setProcessing(false);
+      setDisabled(false);
+      toast.custom( (t) => (
+        <div
+          className={`${
+            t.visible ? 'animate-enter' : 'animate-leave'
+          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+        >
+          <div className="flex-1 w-0 p-4">
+            <div className="flex items-start">
+              <div className="flex-shrink-0 pt-0.5">
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src="https://pbs.twimg.com/profile_images/1587987072685522945/Y_fE_Ojk_400x400.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="ml-3 flex-1">
+
+                  <p className="text-lg font-medium text-black-100">
+                   Success!
+                  </p>
+                  <p className="mt-1 text-md text-gray-500">
+                    Airdrop is Ready.
+                  </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex border-l border-gray-200">
+            <button
+              onClick={() => toast.dismiss(t.id)}
+              className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      ));
+      console.log("Drop Ready")
+        setReward(Number(Web3.utils.fromWei(estimatedClaimAmount().toString(), 'ether'))) ;
+    }
+
   },
   onError(data) {
     setProcessing(true);
     setDisabled(true);
-    toast.error("Drop Not Available. (either Already Claimed, or Not Invited)");
+    toast.custom( (t) => (
+      <div
+        className={`${
+          t.visible ? 'animate-enter' : 'animate-leave'
+        } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+      >
+        <div className="flex-1 w-0 p-4">
+          <div className="flex items-start">
+            <div className="flex-shrink-0 pt-0.5">
+              <img
+                className="h-10 w-10 rounded-full"
+                src="https://pbs.twimg.com/profile_images/1587987072685522945/Y_fE_Ojk_400x400.jpg"
+                alt=""
+              />
+            </div>
+            <div className="ml-3 flex-1">
+
+                <p className="text-lg font-medium text-black-100">
+                 Error
+                </p>
+                <p className="mt-1 text-md text-gray-500">
+                  Drop not Available.  Either... 
+                  <br></br>1. Already claimed (got to Finish Mint)
+                  <br></br> 2. Not invited.
+                </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex border-l border-gray-200">
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    ));
     console.log("Drop Not Available")
     setReward(Number(Web3.utils.fromWei('0', 'ether'))) ;
   },
