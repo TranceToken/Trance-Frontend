@@ -13,26 +13,26 @@ export const xenContract = (contractChain?: Chain) => {
   switch (contractChain?.id) {
     case pulseChain.id:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: contractChain.id,
       };
     case chain.goerli.id:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: contractChain.id,
       };
     case chain.polygonMumbai.id:
     case bscTestnet.id:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: contractChain.id,
       };
     case avaxMainnet.id:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: contractChain.id,
       };
@@ -41,25 +41,25 @@ export const xenContract = (contractChain?: Chain) => {
     case polygonMainnet.id:
     case evmosMainnet.id:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: contractChain.id,
       };
     case moonbeamMainnet.id:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: contractChain.id,
       };
     case chain.mainnet.id:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: 1,
       };
     default:
       return {
-        addressOrName: "0x44E5007Ef437D25d25206c5e3315596C9E3C9b23",
+        addressOrName: "0x6a4671C5A490Af6Bb1FD157B6B3559e12412f49d",
         contractInterface: XENCryptoABI,
         chainId: 4,
       };
