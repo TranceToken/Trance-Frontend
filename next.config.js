@@ -1,16 +1,17 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   async redirects() {
     return [
-      {
-        source: "/",
+/*       {
+        source: "/dashboard",
         destination: "/dashboard",
         permanent: false,
-      },
+      }, */
       {
-        source: "/mint",
+        source: "/",
         destination: "/mint/1",
         permanent: false,
       },

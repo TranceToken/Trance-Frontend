@@ -17,7 +17,7 @@ export const BottomNav: NextPage = () => {
   const { userMint, userStake } = useContext(XENContext);
 
   useEffect(() => {
-    if (userMint && userMint.claimed) {
+    if (userMint && userMint.amount > 0) {
       setMintPageOverride(2);
     }
     else {
@@ -36,6 +36,7 @@ export const BottomNav: NextPage = () => {
 
   return (
     <div className="btm-nav lg:hidden">
+                        
       {navigationItems.map((item, index) => (
         <Link
           key={index}
@@ -50,6 +51,7 @@ export const BottomNav: NextPage = () => {
             }
           })()}
         >
+
           <a
             className={clsx("text-neutral", {
               "disabled active": router.pathname.startsWith(item.href),

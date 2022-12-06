@@ -12,7 +12,6 @@ import {
 import { BigNumber } from "ethers";
 import { chainList } from "~/lib/client";
 import { xenContract } from "~/lib/xen-contract";
-import { merkle } from "~/lib/merkle";
 
 export interface UserMint {
   user: string;
@@ -213,7 +212,7 @@ export const XENProvider = ({ children }: any) => {
       },
       {
         ...xenContract(chain),
-        functionName: "totalXenStaked",
+        functionName: "totalTRANCEStaked",
       },
       {
         ...xenContract(chain),

@@ -2,12 +2,21 @@ import "~/styles/main.css";
 import type { AppProps } from "next/app";
 import { WagmiConfig } from "wagmi";
 import { ConnectKitProvider } from "connectkit";
+import {  useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { client } from "~/lib/client";
 import Layout from "~/components/Layout";
 import { Analytics } from '@vercel/analytics/react';
+
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const loader = document.getElementById('globalLoader');
+      if (loader)
+        loader.remove();
+    }
+  }, []);
   return (
     
     <ThemeProvider>

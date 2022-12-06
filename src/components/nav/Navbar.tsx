@@ -211,7 +211,7 @@ export const Navbar: NextPage = () => {
             )}
             {linkItems.map((item, index) => (
               <li key={index}>
-                <Link href={item.href ?? "/"}>
+                <Link href={item.href ?? "/dashboard"}>
                   <a
                     target="_blank"
                     className="justify-between text-neutral glass"

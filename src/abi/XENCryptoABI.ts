@@ -194,32 +194,6 @@ const XENCryptoABI = [
     },
     {
       "inputs": [],
-      "name": "GENESIS_RANK",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "MAX_PENALTY_PCT",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
       "name": "MAX_TERM_END",
       "outputs": [
         {
@@ -272,7 +246,7 @@ const XENCryptoABI = [
     },
     {
       "inputs": [],
-      "name": "START_TIME",
+      "name": "TRANCE_APY_DAYS_STEP",
       "outputs": [
         {
           "internalType": "uint256",
@@ -285,7 +259,7 @@ const XENCryptoABI = [
     },
     {
       "inputs": [],
-      "name": "WITHDRAWAL_WINDOW_DAYS",
+      "name": "TRANCE_APY_END",
       "outputs": [
         {
           "internalType": "uint256",
@@ -298,7 +272,7 @@ const XENCryptoABI = [
     },
     {
       "inputs": [],
-      "name": "XEN_APY_DAYS_STEP",
+      "name": "TRANCE_APY_START",
       "outputs": [
         {
           "internalType": "uint256",
@@ -311,7 +285,7 @@ const XENCryptoABI = [
     },
     {
       "inputs": [],
-      "name": "XEN_APY_END",
+      "name": "TRANCE_MIN_BURN",
       "outputs": [
         {
           "internalType": "uint256",
@@ -324,7 +298,7 @@ const XENCryptoABI = [
     },
     {
       "inputs": [],
-      "name": "XEN_APY_START",
+      "name": "TRANCE_MIN_STAKE",
       "outputs": [
         {
           "internalType": "uint256",
@@ -336,8 +310,14 @@ const XENCryptoABI = [
       "type": "function"
     },
     {
-      "inputs": [],
-      "name": "XEN_MIN_BURN",
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "rawPulse",
+          "type": "uint256"
+        }
+      ],
+      "name": "_adjustSillyWhale",
       "outputs": [
         {
           "internalType": "uint256",
@@ -345,20 +325,7 @@ const XENCryptoABI = [
           "type": "uint256"
         }
       ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "XEN_MIN_STAKE",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
+      "stateMutability": "pure",
       "type": "function"
     },
     {
@@ -618,17 +585,12 @@ const XENCryptoABI = [
               "type": "address"
             },
             {
-              "internalType": "bool",
-              "name": "claimed",
-              "type": "bool"
-            },
-            {
               "internalType": "uint256",
               "name": "amount",
               "type": "uint256"
             }
           ],
-          "internalType": "struct XENCrypto.MintInfo",
+          "internalType": "struct TRANCECrypto.MintInfo",
           "name": "",
           "type": "tuple"
         }
@@ -663,22 +625,9 @@ const XENCryptoABI = [
               "type": "uint256"
             }
           ],
-          "internalType": "struct XENCrypto.StakeInfo",
+          "internalType": "struct TRANCECrypto.StakeInfo",
           "name": "",
           "type": "tuple"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "globalRank",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -799,7 +748,7 @@ const XENCryptoABI = [
     },
     {
       "inputs": [],
-      "name": "totalXenStaked",
+      "name": "totalTRANCEStaked",
       "outputs": [
         {
           "internalType": "uint256",
@@ -898,11 +847,6 @@ const XENCryptoABI = [
           "type": "address"
         },
         {
-          "internalType": "bool",
-          "name": "claimed",
-          "type": "bool"
-        },
-        {
           "internalType": "uint256",
           "name": "amount",
           "type": "uint256"
@@ -951,7 +895,8 @@ const XENCryptoABI = [
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
-    },
+    }
+
 ] as const;
 
 export default XENCryptoABI;

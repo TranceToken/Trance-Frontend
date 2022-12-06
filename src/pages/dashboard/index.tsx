@@ -11,7 +11,7 @@ import { DuplicateIcon, ExternalLinkIcon } from "@heroicons/react/outline";
 import { useCopyToClipboard } from "usehooks-ts";
 import toast from "react-hot-toast";
 import CountUp from "react-countup";
-
+import { merkle } from "~/lib/merkle";
 const Chains: NextPage = () => {
   const AddressLinks: NextPage<{ chain: Chain }> = ({ chain }) => {
     const [_, copy] = useCopyToClipboard();
