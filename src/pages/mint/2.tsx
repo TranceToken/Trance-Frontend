@@ -217,9 +217,9 @@ const { data } = useContractRead({
                     Minting Invalid
                     </p>
                     <p className="mt-1 text-md text-gray-500">
-                      Minting not Available.
-                      <br></br>  No Mint Exists.
-                      <br></br> 
+                    No Mint Exists.
+                  
+                    
                     </p>
                 </div>
               </div>

@@ -219,11 +219,10 @@ if(merkle.claims[address as keyof typeof address] != undefined)
               <div className="ml-3 flex-1">
   
                   <p className="text-lg font-medium text-black-100">
-                  Drop Already Claimed
+                  Drop Not Available
                   </p>
                   <p className="mt-1 text-md text-gray-500">
-                    Drop not Available.
-                    <br></br>  Already claimed 
+                  Drop not Available to you.
                     <br></br> 
                   </p>
               </div>

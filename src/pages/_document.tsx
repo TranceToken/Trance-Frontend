@@ -5,8 +5,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-  <meta http-equiv="Cache-Control" content="max-age=31536000" />
-  <link rel="prefetch" as="fetch" href="/merkle.ts" />
+
 </Head>
       <body
         className={clsx("bg-base-100", {
@@ -14,9 +13,16 @@ export default function Document() {
             true,
         })}
       >
+
         <div id="globalLoader">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" alt="" />
+
+  <figure>
+  <img src="https://i.pinimg.com/originals/75/10/f6/7510f688ca667f1b933beefe02139328.gif" alt="" />
+ <figcaption> Trance Loading...</figcaption>
+  </figure>
+
 </div>
+
         <Main />
 
         <NextScript />
