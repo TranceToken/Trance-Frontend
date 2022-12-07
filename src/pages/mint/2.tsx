@@ -142,7 +142,7 @@ const { data } = useContractRead({
                      Success!
                     </p>
                     <p className="mt-1 text-md text-gray-500">
-                      Airdrop is Ready.
+                      Minting is Ready!
                     </p>
                 </div>
               </div>
